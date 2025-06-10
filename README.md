@@ -8,7 +8,7 @@ This project is a web application developed with Vue 3 and Vite that enables res
 
 ## Links
 
-- **Production**: [https://reservas-cuca-de-llum.web.app](https://reservas-cuca-de-llum.web.app)
+- **Production**: [https://reservas-rustico-elonce.web.app](https://reservas-rustico-elonce.web.app/calendar)
 
 ## Prerequisites
 

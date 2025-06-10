@@ -5,8 +5,9 @@ import { getAuth } from 'firebase/auth'
 // firebase functions:config:get --> Get API keys
 // firebase functions:config:set --> Set API keys
 // firebase functions:config:unset --> Unset API keys
-// firebase deploy --only hosting:reservas-rustico-el-once
+// firebase deploy --only hosting:reservas-rustico-elonce
 // firebase deploy --only functions
+// firebase projects:list
 
 // Configuración de Firebase (reemplaza con tus credenciales)
 const firebaseConfig = {
