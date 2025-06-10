@@ -1,6 +1,6 @@
-# Cuca de Llum - Reservations
+# Rústico El Once - Reservations
 
-Reservation system for Cuca de Llum Country House.
+Reservation system for Rústico El Once Country House.
 
 ## Description
 
@@ -47,7 +47,7 @@ This project is a web application developed with Vue 3 and Vite that enables res
 1. Clone this repository:
 ```bash
 git clone <repository-url>
-cd app-cuca
+cd app-elonce
 ```
 
 2. Install dependencies:

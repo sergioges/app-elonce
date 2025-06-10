@@ -134,17 +134,17 @@
 
   function sendWhatsapp() {
     window.open(
-      'https://api.whatsapp.com/send?phone=524423620391&text=Hola!%20Acabo%20de%20realizar%20una%20reserva%20para%20Cuca%20de%20Llum...',
+      'https://api.whatsapp.com/send?phone=5214421128615&text=Hola!%20Acabo%20de%20realizar%20una%20reserva.',
       '_blank'
     )
   }
 
   onMounted(() => {
     // Stripe button.
-    const script = document.createElement('script')
-    script.src = 'https://js.stripe.com/v3/buy-button.js'
-    script.async = true
-    document.head.appendChild(script)
+    // const script = document.createElement('script')
+    // script.src = 'https://js.stripe.com/v3/buy-button.js'
+    // script.async = true
+    // document.head.appendChild(script)
   })
 
   watch(isPaymentAvailable, newVal => {
@@ -232,7 +232,7 @@
         ></v-checkbox>
       </v-col>
     </v-row>
-    <v-row v-if="!isPaymentAvailable || props.totalNights >= 6" class="d-flex justify-center">
+    <v-row v-if="!isPaymentAvailable" class="d-flex justify-center">
       <v-col cols="12" md="6">
         <v-btn color="success" block :disabled="props.totalNights === 0" @click="sendData">
           Solicitar reserva
@@ -242,88 +242,28 @@
         <v-btn color="error" block @click="resetData">Borrar</v-btn>
       </v-col>
     </v-row>
-    <v-row
-      v-if="!isTestPaymentAvailable && isPaymentAvailable && props.totalNights <= 5"
-      align="center"
-      justify="center"
-    >
+    <v-row v-else align="center" justify="center">
+      <!--Add stripe buttons-->
+      <p>
+        Si prefieres realizar el pago mediante transferencia bancaria. Envía un mensaje vía
+        Whatsapp.
+      </p>
       <v-col cols="12" md="6">
-        <p>Tienes {{ formattedCountdown }} minutos para realizar el pago.</p>
-        <br />
-        <div v-show="props.totalNights === 1" class="stripe-btn">
-          <stripe-buy-button
-            buy-button-id="buy_btn_1RREO3FmAngK1tZ7JMxfHISk"
-            publishable-key="pk_live_51RQD8CFmAngK1tZ7z0ErZpkdlXcmDv3eya6zGyD0ArqWY56AshHwlO1npQvKpfVsCId93vsxKQ6SfReYrvrUy9m300zptFLD1e"
-          ></stripe-buy-button>
-        </div>
-        <div v-show="props.totalNights === 2" class="stripe-btn">
-          <stripe-buy-button
-            buy-button-id="buy_btn_1RREO3FmAngK1tZ7dwH6OvZs"
-            publishable-key="pk_live_51RQD8CFmAngK1tZ7z0ErZpkdlXcmDv3eya6zGyD0ArqWY56AshHwlO1npQvKpfVsCId93vsxKQ6SfReYrvrUy9m300zptFLD1e"
-          ></stripe-buy-button>
-        </div>
-        <div v-show="props.totalNights === 3" class="stripe-btn">
-          <stripe-buy-button
-            buy-button-id="buy_btn_1RRG0QFmAngK1tZ7xPTujhD1"
-            publishable-key="pk_live_51RQD8CFmAngK1tZ7z0ErZpkdlXcmDv3eya6zGyD0ArqWY56AshHwlO1npQvKpfVsCId93vsxKQ6SfReYrvrUy9m300zptFLD1e"
-          ></stripe-buy-button>
-        </div>
-        <div v-show="props.totalNights === 4" class="stripe-btn">
-          <stripe-buy-button
-            buy-button-id="buy_btn_1RRG1JFmAngK1tZ7UHSeikZy"
-            publishable-key="pk_live_51RQD8CFmAngK1tZ7z0ErZpkdlXcmDv3eya6zGyD0ArqWY56AshHwlO1npQvKpfVsCId93vsxKQ6SfReYrvrUy9m300zptFLD1e"
-          ></stripe-buy-button>
-        </div>
-        <div v-show="props.totalNights === 5" class="stripe-btn">
-          <stripe-buy-button
-            buy-button-id="buy_btn_1RRG1tFmAngK1tZ7rqLb1Rwk"
-            publishable-key="pk_live_51RQD8CFmAngK1tZ7z0ErZpkdlXcmDv3eya6zGyD0ArqWY56AshHwlO1npQvKpfVsCId93vsxKQ6SfReYrvrUy9m300zptFLD1e"
-          ></stripe-buy-button>
-        </div>
-      </v-col>
-      <v-col cols="12" md="6">
-        <p>
-          Si prefieres realizar el pago mediante transferencia bancaria. Envía un mensaje vía
-          Whatsapp.
-        </p>
         <v-btn
           density="default"
           color="primary"
           prepend-icon="mdi-whatsapp"
-          class="text-none mt-6 contact-btn"
+          block
           @click="sendWhatsapp"
         >
           Contacta
         </v-btn>
       </v-col>
-      <v-btn class="reset-btn" color="error" @click="resetData">Borrar</v-btn>
-    </v-row>
-    <v-row v-if="isTestPaymentAvailable && isPaymentAvailable" align="center" justify="center">
       <v-col cols="12" md="6">
-        <div class="stripe-btn">
-          <stripe-buy-button
-            buy-button-id="buy_btn_1RRGjSCIQLEDgwFHe9cACXmB"
-            publishable-key="pk_test_51RQD8NCIQLEDgwFH3qTpatBehR1DtMI3xjGyAuEwq4MvVnD7NR1c5cqjeK2mNeuheeim3aFybhtto4JWMBDBAKeR00u8NepdDY"
-          ></stripe-buy-button>
-        </div>
+        <v-btn color="error" block @click="resetData">Borrar</v-btn>
       </v-col>
-      <v-col cols="12" md="6">
-        <p>
-          Si prefieres realizar el pago mediante transferencia bancaria. Envía un mensaje vía
-          Whatsapp.
-        </p>
-        <v-btn
-          density="default"
-          color="primary"
-          prepend-icon="mdi-whatsapp"
-          class="text-none mt-6 contact-btn"
-          @click="sendWhatsapp"
-        >
-          Contacta
-        </v-btn>
-      </v-col>
-      <v-btn class="reset-btn" color="error" @click="resetData">Borrar</v-btn>
     </v-row>
+    <!--Add testing logic-->
   </v-form>
 </template>
 
@@ -334,8 +274,9 @@
 
   .contact-btn {
     display: flex;
-    padding: 20px 40px;
+    padding: 20px 55px;
     margin: 0 auto;
+    margin-bottom: 20px;
   }
 
   .reset-btn {

@@ -1,7 +1,7 @@
 import { ref, reactive } from 'vue'
 import { defineStore } from 'pinia'
 
-import { db } from '../plugins/firebase'
+import { db } from '@plugin/firebase'
 import { collection, getDocs } from 'firebase/firestore'
 
 export const useReservationStore = defineStore('reservation', () => {

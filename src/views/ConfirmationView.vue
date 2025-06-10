@@ -4,8 +4,9 @@
 
   import FooterApp from '@/components/FooterApp.vue'
 
-  import { db } from '../plugins/firebase'
-  import { auth } from '../plugins/firebase'
+  import { db, auth } from '@plugin/firebase'
+  import { config } from '@plugin/config'
+
   import { updateDoc, doc } from 'firebase/firestore'
   import { signInWithEmailAndPassword } from 'firebase/auth'
 
@@ -15,7 +16,9 @@
   const idReservation = sessionStorage.getItem('idReservation')
   // For testing porpuses.
   const dbName =
-    'testing' in route.query && route.query.testing === 'enabled' ? 'test-cuca' : 'reservations'
+    'testing' in route.query && route.query.testing === 'enabled'
+      ? config.dbNameTest
+      : config.dbNameProd
 
   const shuffledNumbers = ref([])
 
@@ -46,11 +49,11 @@
   }
 
   onMounted(async () => {
-    if ('paid' in route.query && route.query.paid === 'done') {
-      router.push('')
-    } else {
-      router.push('/calendar')
-    }
+    // if ('paid' in route.query && route.query.paid === 'done') {
+    //   router.push('')
+    // } else {
+    //   router.push('/calendar')
+    // }
     shuffledNumbers.value = shuffleArray([...Array(9).keys()].map(i => i + 1))
 
     try {

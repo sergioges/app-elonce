@@ -1,11 +1,16 @@
 <template>
-  <a href="https://cuca-de-llum.web.app" target="_blank">
-    <v-img src="/cuca-de-llum-logo.png" class="logo" alt="Cuca de Llum logo" contain></v-img>
+  <a href="https://rusticoelonce.com/" target="_blank">
+    <v-img
+      src="/Rustico-El-Once-Finca-Campestre.svg"
+      class="logo"
+      alt="Rústico El Once - Finca Campestre logo"
+      contain
+    ></v-img>
   </a>
   <h1 class="text-h4">Reserva tu estancia</h1>
   <h2 class="text-body-2">
-    En el corazón de Amealco, Quéretaro, se encuentra Cuca de Llum, un lugar mágico donde la
-    naturaleza y la tranquilidad se unen para ofrecerte una experiencia única.
+    Finca campestre en Amealco. Un rincón de descanso para familias, grupos y eventos. Hoespedaje
+    único.
   </h2>
 </template>
 
@@ -38,6 +43,7 @@
     border-radius: 5px;
     margin: 0 auto;
     margin-bottom: 20px;
+    background-color: #2f5349;
   }
 
   @media (min-width: 960px) {
