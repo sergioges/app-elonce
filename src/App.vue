@@ -5,6 +5,8 @@
   import { useAuthStore } from '@store/authStore'
   import { useReservationStore } from '@store/reservationStore'
 
+  import { config } from '@plugin/config'
+
   const route = useRoute()
 
   const authStore = useAuthStore()
@@ -13,7 +15,7 @@
   const { setDbName } = reservationStore
 
   const dbName = computed(() =>
-    route.query['test-mode'] === 'enabled' ? 'test-cuca' : 'reservations'
+    route.query['test-mode'] === 'enabled' ? config.dbNameTest : config.dbNameProd
   )
 
   // For testing porpuses, need to watch if there is a test query param - test-mode=enabled

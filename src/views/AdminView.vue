@@ -5,7 +5,7 @@
   import AdminTable from '@/components/admin/AdminTable.vue'
   import AdminForm from '@/components/admin/AdminForm.vue'
 
-  import { db } from '../plugins/firebase'
+  import { db } from '@plugin/firebase'
   import { doc, getDoc } from 'firebase/firestore'
 
   import { useReservationStore } from '@store/reservationStore'

@@ -44,14 +44,19 @@
   >
     <p>
       Por favor inténtalo de nuevo más tarde. Para cualquier duda, puedes escribirnos a
-      <a href="mailto:cucadellumcasarural@gmail.com">nuestro mail.</a>
+      <a href="mailto:contacto@reservame-agenda-digital.com">nuestro mail.</a>
     </p>
   </v-alert>
   <v-container class="align-container">
     <v-row align="start" justify="center">
       <v-col class="d-flex flex-column ga-4" cols="12" md="8">
-        <a href="https://cuca-de-llum.web.app" target="_blank">
-          <v-img src="/cuca-de-llum-logo.png" class="logo" alt="Cuca de Llum logo" contain></v-img>
+        <a href="https://rusticoelonce.com/" target="_blank">
+          <v-img
+            src="/Rustico-El-Once-Finca-Campestre.svg"
+            class="logo"
+            alt="Rústico El Once - Finca Campestre logo"
+            contain
+          ></v-img>
         </a>
         <v-card class="pa-4">
           <v-card-title class="text-h5 text-center">Iniciar Sesión</v-card-title>
@@ -97,6 +102,7 @@
     border-radius: 5px;
     margin: 0 auto;
     margin-bottom: 20px;
+    background-color: #2f5349;
   }
 
   @media (min-width: 960px) {

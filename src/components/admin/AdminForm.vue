@@ -3,7 +3,7 @@
   import { storeToRefs } from 'pinia'
   import { useDisplay } from 'vuetify'
 
-  import { db } from '../../plugins/firebase'
+  import { db } from '@plugin/firebase'
   import { updateDoc, doc } from 'firebase/firestore'
 
   import { useReservationStore } from '@store/reservationStore'
