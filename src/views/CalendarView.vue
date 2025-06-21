@@ -66,14 +66,10 @@
       border="end"
       closable
     >
-      <p v-if="totalNights >= 3">
+      <p>
         Tan pronto revisemos tu solucitud nos pondremos en conacto contigo. Si lo deseas, puedes
         escribirnos a
-        <a href="mailto:cucadellumcasarural@gmail.com">nuestro mail.</a>
-      </p>
-      <p v-else>
-        Ahora continua con el proceso de pago. Recuerda que tienes {{ formattedCountdown }} minutos
-        para realizarlo.
+        <a href="mailto:ventas@rusticoelonce.com">nuestro mail.</a>
       </p>
     </v-alert>
     <v-alert
